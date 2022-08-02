@@ -1,5 +1,3 @@
-from tabnanny import verbose
-from venv import create
 from django.db import models
 from ckeditor.fields import RichTextField
 
