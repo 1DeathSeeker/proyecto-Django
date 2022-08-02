@@ -1,0 +1,32 @@
+{%extends "inicio/encabezado.html"%} {%block titulo%}Seguridad{%endblock%}
+{%block imagen%} {%load static%} {%static 'inicio/images/home.png'%}
+{%endblock%} {%block titulomenu%}Seguridad{%endblock%} 
+{%block Encabezdo%}
+<!--Encabezdo -->
+<div class="page-header">
+  <div class="page-title">
+    <h3>prueb  a <small>Seguridad</small></h3>
+  </div>
+</div>
+<!-- /Encabezado-->
+{%endblock%} {% block contenido%}
+<!-- Tabla-->
+<body>
+    <form method = "GET">
+        Nombre:
+        <input type="text" name = "nombre"/>
+        <input type="submit" name = "Buscar"/>
+    </form>
+    <h2>Resultado: {{ nombre }}</h2>
+
+    <!--busqueda-->
+    <script type="application/javascript">
+      var busqueda= new URLSearchParams(document.location.search);
+      if(busqueda.has("nombre")){
+          document.getElementById("resultado").innerHTML="Resultado: " + busqueda.get("nombre")
+      }
+  </script>
+    <!--busqueda-->
+</body>
+<!-- /Tabla-->
+{%endblock%}

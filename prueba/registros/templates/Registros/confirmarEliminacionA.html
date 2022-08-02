@@ -1,0 +1,26 @@
+{%extends "inicio/encabezado.html"%} {%block titulo%}Principal{%endblock%}
+{%block imagen%} {%load static%} {%static 'inicio/images/home.png'%}
+{%endblock%} {%block titulomenu%}Eliminar{%endblock%} 
+{%block Encabezdo%}
+<!--Encabezdo -->
+<div class="page-header">
+  <div class="page-title">
+    <h3>Eliminar comentario</h3>
+  </div>
+</div>
+<!-- /Encabezado-->
+{%endblock%} 
+
+{% block contenido%}
+<form method="POST">
+    {%csrf_token%}
+    <!--ALERTA-->
+    <div class="callout callout-danger fade in">
+        <h5>Eliminando Comentarios</h5>
+        <p>¿Estas seguro que deseas <strong>ELIMINAR</strong> el Alumno seleccionado?</p>
+    </div>
+    <!--ALERTA-->
+    <button type="submit" class = "btn btn-danger">SI</button>
+    <a href="{%url 'consultarAlumnos'%}" class="btn btn-primary">Cancelar</a>
+</form>    
+{%endblock%}
